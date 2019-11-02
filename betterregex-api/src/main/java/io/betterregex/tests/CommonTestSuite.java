@@ -2,10 +2,12 @@ package io.betterregex.tests;
 
 import io.betterregex.Match;
 import io.betterregex.Regex;
+import io.betterregex.RegexFlag;
 import org.junit.jupiter.api.DynamicTest;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 
 import static io.betterregex.RegexFlag.*;
@@ -30,8 +32,7 @@ public class CommonTestSuite {
                 dynamicTest("Should correctly find all as match with regex.", this::testFindAllMatchIn),
                 dynamicTest("Should correctly find all as groups with regex.", this::testFindAllGroupsIn),
                 dynamicTest("Should correctly find all as groups as match with regex.", this::testFindAllGroupsMatchIn),
-                dynamicTest("Should correctly do split with regex.", this::testSplit),
-                dynamicTest("Should correctly use flags", this::testFlags)
+                dynamicTest("Should correctly do split with regex.", this::testSplit)
         );
 
     }
@@ -133,11 +134,5 @@ public class CommonTestSuite {
         assertThat(regex.split("___A___AA__X_AB____C____CAB__W").list()).containsExactly("___", "___", "__X_", "____", "____", "__W");
         assertThat(regex.split("WWWBBBZZZCCC").list()).contains("WWW", "ZZZ");
     }
-
-    void testFlags() {
-        Regex regex = Regex.of("[a-z].[a-z]+", MULTILINE, DOTALL, CASE_INSENSITIVE);
-        assertThat(regex.findFirstIn("  A\nBC   ")).isNotEmpty();
-    }
-
 
 }

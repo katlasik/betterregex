@@ -145,7 +145,6 @@ public enum RegexFlag {
      * <p>
      * Specifying this flag may impose a performance penalty.  </p>
      *
-     * @since 1.7
      */
     UNICODE_CHARACTER_CLASS,
     DISABLE_UNICODE_GROUPS;

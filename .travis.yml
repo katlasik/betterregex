@@ -3,7 +3,7 @@ language: java
 jdk: openjdk11
 
 script:
-  - mvn ++$TRAVIS_SCALA_VERSION test
+  - mvn test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
