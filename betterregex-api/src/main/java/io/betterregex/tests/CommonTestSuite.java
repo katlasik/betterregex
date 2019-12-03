@@ -127,6 +127,7 @@ public class CommonTestSuite {
         Regex regex = Regex.of("([ABCabc]+)XXX([ABCabc]+)");
         assertThat(regex.findGroupsInAsMatch("aaaXXXbbb").list()).containsExactly(new Match("aaa", 0, 3), new Match("bbb", 6, 9));
         assertThat(regex.findGroupsInAsMatch("aXXXcB").list()).containsExactly(new Match("a", 0, 1), new Match("cB", 4, 6));
+        assertThat(regex.findGroupsInAsMatch("aaa").list()).isEmpty();
     }
 
     void testSplit() {
