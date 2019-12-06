@@ -1,16 +1,16 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.katlasik</groupId>
-    <artifactId>better-regex</artifactId>
+    <artifactId>plain-regex</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
-        <module>betterregex-api</module>
-        <module>betterregex-java</module>
-        <module>betterregex-re2j</module>
+        <module>plainregex-api</module>
+        <module>plainregex-java</module>
+        <module>plainregex-re2j</module>
     </modules>
     <dependencies>
         <dependency>
